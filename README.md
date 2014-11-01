@@ -2,7 +2,9 @@
 
 
 
-_drinkme_ is a very simple tool for testing shellcode. You feed it shellcode on stdin and it will execute it. With the -p switch _drinkme_ will print (but not execute) the newly formated shellcode. _drinkme_ ignores comments, quotes, stray semi-colons, etc.
+_drinkme_ is a very simple tool for testing shellcode. You feed it shellcode on stdin and it will execute it. (Note: If you feed it garbage, then it will attempt to execute garbage. Your mileage may vary.)
+
+With the -p switch _drinkme_ will print (but not execute) the newly formated shellcode. _drinkme_ ignores comments, quotes, stray semi-colons, etc.
 
 _drinkme_ was designed as a test harness for shellcode developers. However, if you wanted to test random bits of shellcode from the internet (and you know what you are doing enough to feel safe with this) then _drinkme_ allows you to cut and paste easily from any of the shellcode repositories out there.
 
