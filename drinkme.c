@@ -59,10 +59,10 @@ char *CALLING_CARD = "@emptymonkey - https://github.com/emptymonkey";
 
 
 void usage(){
-	fprintf(stderr, "usage: %s [-p] [-h]\n", program_invocation_short_name);
-	fprintf(stderr, "\t-p\tJust print the formatted shellcode. Don't execute.\n");
+	fprintf(stderr, "\nusage: %s [-p] [-h]\n", program_invocation_short_name);
+	fprintf(stderr, "\t-p\tPrint the formatted shellcode. Don't execute it.\n");
 	fprintf(stderr, "\t-h\tPrint this help message.\n");
-	fprintf(stderr, "\n\tExample:\t%s <hello_world.x86_64\n", program_invocation_short_name);
+	fprintf(stderr, "\n\tExample:\t%s <hello_world.x86_64\n\n", program_invocation_short_name);
 	exit(-1);
 }
 
