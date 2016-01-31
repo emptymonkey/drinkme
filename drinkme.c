@@ -206,16 +206,19 @@ int main(int argc, char **argv){
 			continue;
 		}
 
-		if(!j){
-			if(byte[j] != '0'){
-				if(byte[j] == 'x'){
-					byte[j++] = '0';
-					byte[j] = 'x';
-				}else{
-					byte[j + 2] = byte[j];
-					byte[j++] = '0';
-					byte[j++] = 'x';
-				}
+		// Case: 0x## takes care of itself.
+		if((j == 1) && !((byte[0] == '0') && (byte[1] == 'x'))){
+			if(byte[0] == 'x'){
+				byte[0] = '0';
+				byte[1] = 'x';
+				j = 1;
+
+			}else{
+				byte[3] = byte[1];
+				byte[2] = byte[0];
+				byte[0] = '0';
+				byte[1] = 'x';
+				j = 3;
 			}
 		}
 
@@ -237,7 +240,6 @@ int main(int argc, char **argv){
 	if(retval == -1){
 		error(-1, errno, "read(%d, %p, %d)", STDIN_FILENO, (void *) &(byte[j]), 1);
 	}
-
 
 	/* Now, politely ask the kernel to make our char array executable. */
 	if(mprotect(sc, sc_len, PROT_READ|PROT_EXEC) == -1){
