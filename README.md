@@ -56,9 +56,8 @@ For example, NOP can be represented as any of "0x90", "\x90", "x90", or "90".
 	
 ## Usage ##
 
-	usage: drinkme [-p] [-h]
-		-p	Print the formatted shellcode. Don't execute it.
-		-h	Print this help message.
+	usage:    drinkme [-p] [-h]
+	           -p  Print the formatted shellcode. Don't execute it.
+	           -h  Print this help message.
 	
-		Example:	cat hello_world.x86_64 | drinkme
-	
+	Example:  cat hello_world.x86_64 | drinkme
