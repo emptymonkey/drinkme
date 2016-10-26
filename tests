@@ -1,0 +1,6 @@
+cat hello_world.x86_64 | ./drinkme 
+cat hello_world.x86_64 | sed 's/\\//g' | ./drinkme 
+cat hello_world.x86_64 | sed 's/\\x//g' | ./drinkme 
+cat hello_world.x86_64 | sed 's/\\x/0x/g' | ./drinkme 
+cat hello_world.x86_64 | ./drinkme 
+cat hello_world.x86_64.nopsled.10k | ./drinkme 
