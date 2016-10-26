@@ -53,6 +53,19 @@ For example, NOP can be represented as any of "0x90", "\x90", "x90", or "90".
 	
 	$ echo $$
 	18613
+
+**msfvenom to exec "/usr/bin/id"**
+
+	root@kali-amd64:~# msfvenom -p linux/x64/exec CMD=/usr/bin/id -f hex
+	No platform was selected, choosing Msf::Module::Platform::Linux from the payload
+	No Arch selected, selecting Arch: x86_64 from the payload
+	No encoder or badchars specified, outputting raw payload
+	Payload size: 51 bytes
+	Final size of hex file: 102 bytes
+	6a3b589948bb2f62696e2f736800534889e7682d6300004889e652e80c0000002f7573722f62696e2f69640056574889e60f05
+
+	root@kali-amd64:~# msfvenom -p linux/x64/exec CMD=/usr/bin/id -f hex 2>/dev/null | drinkme
+	uid=0(root) gid=0(root) groups=0(root)
 	
 ## Usage ##
 
