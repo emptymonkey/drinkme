@@ -26,9 +26,6 @@
  *    * ';'
  *    * C and C++ style comments will be appropriately handled.
  *
- *
- *  Now you too can cut and paste shellcode straight from the internet with wild abandon!
- *
  **********************************************************************************************************************/
 
 

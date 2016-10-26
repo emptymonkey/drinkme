@@ -1,14 +1,21 @@
 # drinkme
 
+_drinkme_ is a shellcode test harness. It reads shellcode from stdin and executes it. This allows a pentester to quickly test their payload before deployment to ensure its stability.
 
+Your mileage may vary!
 
-_drinkme_ is a very simple tool for testing shellcode. You feed it shellcode on stdin and it will execute it. (Note: If you feed it garbage, then it will attempt to execute garbage. Your mileage may vary.)
+## Formats ##
 
-With the -p switch _drinkme_ will print (but not execute) the newly formated shellcode. _drinkme_ ignores comments, quotes, stray semi-colons, etc.
+_drinkme_ can handle shellcode in the following formats:
 
-_drinkme_ was designed as a test harness for shellcode developers. However, if you wanted to test random bits of shellcode from the internet (and you know what you are doing enough to feel safe with this) then _drinkme_ allows you to cut and paste easily from any of the shellcode repositories out there.
+* "0x##"
+* "\x##"
+* "x##"
+* "##"
 
-##Examples##
+For example, NOP can be represented as any of "0x90", "\x90", "x90", or "90".
+
+## Examples ##
 
 **write(STDOUT_FILENO, "Hello world!\n", strlen("Hello world!\n"))**
 
@@ -47,7 +54,7 @@ _drinkme_ was designed as a test harness for shellcode developers. However, if y
 	$ echo $$
 	18613
 	
-##Usage##
+## Usage ##
 
 	usage: drinkme [-p] [-h]
 		-p	Print the formatted shellcode. Don't execute it.
