@@ -49,7 +49,7 @@ For example, NOP can be represented as any of "0x90", "\x90", "x90", or "90".
 	empty@monkey:~$ echo $$
 	3880
 	
-	empty@monkey:~/code/drinkme$ cat execve_bin_sh.x86_64 | ./drinkme
+	empty@monkey:~/code/drinkme$ cat execve_bin_sh.x86_64 | drinkme
 	
 	$ echo $$
 	18613
