@@ -1,6 +1,6 @@
 # drinkme
 
-_drinkme_ is a shellcode test harness. It reads shellcode from stdin and executes it. This allows a pentester to quickly test their payload before deployment to ensure its stability.
+_drinkme_ is a shellcode test harness. It reads shellcode from stdin and executes it. This allows pentesters to quickly test their payloads before deployment.
 
 Your mileage may vary!
 
