@@ -15,7 +15,7 @@ _drinkme_ was designed as a test harness for shellcode developers. However, if y
 	empty@monkey:~$ cat hello_world.x86_64 
 	\xeb\x1d\x5e\x48\x31\xc0\xb0\x01\x48\x31\xff\x40\xb7\x01\x48\x31\xd2\xb2\x0d\x0f\x05\x48\x31\xc0\xb0\x3c\x48\x31\xff\x0f\x05\xe8\xde\xff\xff\xff\x48\x65\x6c\x6c\x6f\x20\x77\x6f\x72\x6c\x64\x21\x0a
 	
-	empty@monkey:~$ drinkme <hello_world.x86_64 
+	empty@monkey:~$ cat hello_world.x86_64 | drinkme
 	Hello world!
 
 
@@ -33,13 +33,13 @@ _drinkme_ was designed as a test harness for shellcode developers. However, if y
 	    "\xb0\x3b"                                      // mov    $0x3b, %al
 	    "\x0f\x05";                                     // syscall
 		
-	empty@monkey:~$ drinkme -p <execve_bin_sh.x86_64 
+	empty@monkey:~$ cat execve_bin_sh.x86_64 | drinkme -p 
 	\x48\x31\xd2\x48\xbb\x2f\x2f\x62\x69\x6e\x2f\x73\x68\x48\xc1\xeb\x08\x53\x48\x89\xe7\x50\x57\x48\x89\xe6\xb0\x3b\x0f\x05
 	
 	empty@monkey:~/code/drinkme$ echo $$
 	3880
 	
-	empty@monkey:~/code/drinkme$ ./drinkme <execve_bin_sh.x86_64 
+	empty@monkey:~/code/drinkme$ cat execve_bin_sh.x86_64 | ./drinkme
 	
 	$ echo $$
 	18613
@@ -50,5 +50,5 @@ _drinkme_ was designed as a test harness for shellcode developers. However, if y
 		-p	Print the formatted shellcode. Don't execute it.
 		-h	Print this help message.
 	
-		Example:	drinkme <hello_world.x86_64
+		Example:	cat hello_world.x86_64 | drinkme
 	

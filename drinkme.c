@@ -60,10 +60,10 @@ char *CALLING_CARD = "@emptymonkey - https://github.com/emptymonkey";
 
 
 void usage(){
-	fprintf(stderr, "\nusage: %s [-p] [-h]\n", program_invocation_short_name);
-	fprintf(stderr, "\t-p\tPrint the formatted shellcode. Don't execute it.\n");
-	fprintf(stderr, "\t-h\tPrint this help message.\n");
-	fprintf(stderr, "\n\tExample:\t%s <hello_world.x86_64\n\n", program_invocation_short_name);
+	fprintf(stderr, "\nusage:    %s [-p] [-h]\n", program_invocation_short_name);
+	fprintf(stderr, "           -p  Print the formatted shellcode. Don't execute it.\n");
+	fprintf(stderr, "           -h  Print this help message.\n");
+	fprintf(stderr, "\nExample:  cat hello_world.x86_64 | %s\n\n", program_invocation_short_name);
 	exit(-1);
 }
 
@@ -298,7 +298,7 @@ int main(int argc, char **argv){
 	}else{
 
 		for(byte_count = 0; byte_count < sc_count; byte_count++){
-			printf("\\x%02hhx", sc[byte_count]);
+			printf("%02hhx", sc[byte_count]);
 		}
 		printf("\n");
 
