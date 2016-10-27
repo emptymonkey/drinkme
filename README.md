@@ -55,23 +55,26 @@ When processing the input _drinkme_ will ignore any of the following:
 	empty@monkey:~$ echo $$
 	3880
 	
-	empty@monkey:~/code/drinkme$ cat execve_bin_sh.x86_64 | drinkme
+	empty@monkey:~$ cat execve_bin_sh.x86_64 | drinkme
 	
 	$ echo $$
 	18613
 
 **msfvenom to exec "/usr/bin/id"**
 
-	root@kali-amd64:~# msfvenom -p linux/x64/exec CMD=/usr/bin/id -f hex
-	No platform was selected, choosing Msf::Module::Platform::Linux from the payload
-	No Arch selected, selecting Arch: x86_64 from the payload
+	root@kali-amd64:~# msfvenom --arch x86_64 --platform linux -f hex -p linux/x64/exec CMD=/usr/bin/id 
 	No encoder or badchars specified, outputting raw payload
 	Payload size: 51 bytes
 	Final size of hex file: 102 bytes
 	6a3b589948bb2f62696e2f736800534889e7682d6300004889e652e80c0000002f7573722f62696e2f69640056574889e60f05
-
-	root@kali-amd64:~# msfvenom -p linux/x64/exec CMD=/usr/bin/id -f hex 2>/dev/null | drinkme
+	
+	root@kali-amd64:~# msfvenom --arch x86_64 --platform linux -f hex -p linux/x64/exec CMD=/usr/bin/id | drinkme 
+	No encoder or badchars specified, outputting raw payload
+	Payload size: 51 bytes
+	Final size of hex file: 102 bytes
+	
 	uid=0(root) gid=0(root) groups=0(root)
+
 	
 ## Usage ##
 
