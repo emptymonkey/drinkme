@@ -2,7 +2,9 @@
 CC = /usr/bin/gcc
 CFLAGS = -Wall -Wextra
 
-hello_world: drinkme.c
+all: drinkme
+
+drinkme: drinkme.c
 	$(CC) $(CFLAGS) -o drinkme drinkme.c
 
 clean:
