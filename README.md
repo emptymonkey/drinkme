@@ -15,6 +15,12 @@ _drinkme_ can handle shellcode in the following formats:
 
 For example, NOP can be represented as any of "0x90", "\x90", "x90", or "90".
 
+When processing the input _drinkme_ will ignore any of the following:
+
+* C and C++ style comments.
+* All whitespace.
+* Any characters from the set [\\",;].
+
 ## Examples ##
 
 **write(STDOUT_FILENO, "Hello world!\n", strlen("Hello world!\n"))**
