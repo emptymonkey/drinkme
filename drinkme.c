@@ -297,8 +297,7 @@ int main(int argc, char **argv){
 		for(byte_count = 0; byte_count < sc_count; byte_count++){
 			printf("%02hhx", sc[byte_count]);
 		}
-		printf("\n");
-
+		// Used to be a printf("\n"); here, but that kills in-lining this tool with xxd, which is my main usecase.
 	}
 
 
